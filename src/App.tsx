@@ -1,8 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {useStore} from './store';
+import { Types } from './store/example/reducer';
 
 function App() {
+	const {state, dispatch} = useStore();
+
   return (
     <div className="App">
       <header className="App-header">
@@ -11,6 +15,7 @@ function App() {
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
         <a
+				onClick={() => dispatch({type: Types.MESSAGE, payload: {message: 'teste'}})}
           className="App-link"
           href="https://reactjs.org"
           target="_blank"
@@ -18,6 +23,7 @@ function App() {
         >
           Learn React
         </a>
+	<h1>{state.example.message}</h1>
       </header>
     </div>
   );
