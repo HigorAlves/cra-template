@@ -14,13 +14,10 @@ function App(): React.ReactElement {
 				<img src={logo} className='App-logo' alt='logo' />
 				<p>
 					Edit
-					<code>src/App.tsx</code>
+					<code> src/pages/home/index.tsx </code>
 					and save to reload.
 				</p>
-				<a className='App-link' href='https://reactjs.org' target='_blank' rel='noopener noreferrer'>
-					Learn React
-				</a>
-				<button type='button' onClick={() => dispatch({ type: Types.MESSAGE, payload: { message: '👨🏻‍💻 Coding like a PRO' } })}>
+				<button type='button' onClick={() => dispatch({ type: Types.MESSAGE, payload: { message: '👨🏻‍💻 All seems to work! ✅' } })}>
 					{state.example.message}
 				</button>
 			</header>
