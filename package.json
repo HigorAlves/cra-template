@@ -12,6 +12,7 @@
     "@types/react-dom": "^16.9.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "typescript": "~3.7.2"
   },
@@ -19,8 +20,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-		"eject": "react-scripts eject",
-		"lint": "eslint --fix --ext ts,tsx src",
+    "eject": "react-scripts eject",
+    "lint": "eslint --fix --ext ts,tsx src",
     "release": "standard-version",
     "release:major": "standard-version -- --release-as major",
     "release:minor": "standard-version -- --release-as minor",
@@ -74,7 +75,7 @@
   },
   "husky": {
     "hooks": {
-			"pre-commit": "lint-staged",
+      "pre-commit": "lint-staged",
       "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
     }
   }

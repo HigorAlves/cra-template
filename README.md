@@ -53,6 +53,7 @@ Abaixo segue o que foi utilizado na criação deste template:
 
 - [ReactJS](http://reactjs.org) - Uma biblioteca JavaScript para criar interfaces de usuário
 - [Typescript](https://www.typescriptlang.org) - O Typescript é um SuperSet para ECMAscript nos ajudando a tipar melhor nossos componentes.
+- [React Router Dom](https://reactrouter.com/web/guides/quick-start) - Biblioteca para genrenciamento de rotas dentro do ReactJS.
 - [Husky](https://www.npmjs.com/package/husky) - Plugin para ajudar a rodar scripts antes de se commitar alguma alteração;
 - [lint-staged](https://www.npmjs.com/package/lint-staged) - Executa o linter para os arquivos no Staged do Git, não permitindo subir arquivos fora dos padrões;
 - [standard-version](https://github.com/conventional-changelog/standard-version) - Padronização para versionamento semantico usando o padrão semver e CHANGELOG;
@@ -99,6 +100,7 @@ cra-template
 │   ├── router/
 │   ├── services/
 │   ├── store/
+│   ├── template/
 │   ├── index.tsx
 │   ├── react-app-env.d.ts
 │   ├── serviceWorker.ts
@@ -153,13 +155,15 @@ Nesta seção haverão instruções caso você queira editar o template, explica
 
       - **reducer.ts** - Arquivo responsável por relacionar as **Actions** disparadas pela aplicação e estabelecer o estado inicial da aplicação;
 
-			- **index.tsx** - Arquivo responsável por gerar um Hook para se usar o estado global de forma facil dentro da aplicação;
+      - **index.tsx** - Arquivo responsável por gerar um Hook para se usar o estado global de forma facil dentro da aplicação;
 
-  - **index.tsx** - Arquivo responsável por centralizar o código do diretório `src`, nele é inserido o HOC Provider que é o responsável por disponilizar o state global para a aplicação, e dentro do Provider são chamadas as rotas tal como qualquer outra configuração que precise ser executada na inicialização da aplicação, ele é como um _Entry Point_ do diretório `src`;
+  - **template** - Os templates são componentes react compartilhados onde englobam o **children** com sua implementação;
+	
+	- **index.tsx** - Arquivo responsável por centralizar o código do diretório `src`, nele é inserido o HOC Provider que é o responsável por disponilizar o state global para a aplicação, e dentro do Provider são chamadas as rotas tal como qualquer outra configuração que precise ser executada na inicialização da aplicação, ele é como um _Entry Point_ do diretório `src`;
 
 - **.editorconfig** - Arquivo destinado à configuração do plugin Editor Config, que padroniza algumas configurações para o editor em diferentes ambientes;
 
-- **.eslintrc.json** - Arquivo de configuração do ESLint, é nele que são inseridas as regras e configurações de Linting do projeto, tal como a configuração do Resolver para o Babel Plugin Root Import e configuração da variável global `__DEV__`;
+- **.eslintrc.json** - Arquivo de configuração do ESLint, é nele que são inseridas as regras e configurações de Linting do projeto;
 
 - **.prettierrc** - Arquivo de configuração do Prettier;
 
