@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import 'assets/css/reset.css';
-import App from 'pages/App';
+import App from 'pages/home';
 
 import { StoreProvider } from 'store';
 
