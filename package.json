@@ -20,7 +20,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
 		"eject": "react-scripts eject",
-		"lint": "eslint src --ext ts,tsx",
+		"lint": "eslint --fix --ext ts,tsx src",
     "release": "standard-version",
     "release:major": "standard-version -- --release-as major",
     "release:minor": "standard-version -- --release-as minor",

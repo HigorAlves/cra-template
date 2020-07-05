@@ -1,19 +1,21 @@
-import React, { createContext, useReducer, useContext } from "react"
-import {INITIAL_STATE,reducer, ContextType} from './reducer'
+import React, { createContext, useReducer, useContext } from 'react';
 
-const StoreContext = createContext<ContextType>({state: INITIAL_STATE, dispatch: () => null});
+import { INITIAL_STATE, reducer, ContextType } from './reducer';
 
-export const StoreProvider = ({ children } : {children: React.ReactChild}) => {
-	const [state, dispatch] = useReducer(reducer, INITIAL_STATE)
-	
-  return (
-    <StoreContext.Provider value={{ state, dispatch }}>
-      {children}
-    </StoreContext.Provider>
-  )
-}
+const StoreContext = createContext<ContextType>({ state: INITIAL_STATE, dispatch: () => null });
 
-export const useStore = () => {
-	const { state, dispatch } = useContext(StoreContext)
-  return { state, dispatch }
-}
+type Props = {
+	children: React.ReactChild;
+};
+
+export const StoreProvider: React.FC<Props> = ({ children }: Props): React.ReactElement => {
+	const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
+
+	return <StoreContext.Provider value={{ state, dispatch }}>{children}</StoreContext.Provider>;
+};
+
+export const useStore = (): ContextType => {
+	const { state, dispatch } = useContext(StoreContext);
+
+	return { state, dispatch };
+};

@@ -3,9 +3,9 @@ import React from 'react';
 import logo from 'assets/images/logo.svg';
 
 import { useStore } from 'store';
-import { Types } from 'store/example/reducer';
+import { Types } from 'store/example/types';
 
-function App() {
+function App(): React.ReactElement {
 	const { state, dispatch } = useStore();
 
 	return (
@@ -17,16 +17,12 @@ function App() {
 					<code>src/App.tsx</code>
 					and save to reload.
 				</p>
-				<a
-					onClick={() => dispatch({ type: Types.MESSAGE, payload: { message: 'teste' } })}
-					className='App-link'
-					href='https://reactjs.org'
-					target='_blank'
-					rel='noopener noreferrer'
-				>
+				<a className='App-link' href='https://reactjs.org' target='_blank' rel='noopener noreferrer'>
 					Learn React
 				</a>
-				<h1>{state.example.message}</h1>
+				<button type='button' onClick={() => dispatch({ type: Types.MESSAGE, payload: { message: '👨🏻‍💻 Coding like a PRO' } })}>
+					{state.example.message}
+				</button>
 			</header>
 		</div>
 	);

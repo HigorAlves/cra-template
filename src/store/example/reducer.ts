@@ -1,23 +1,10 @@
-export enum Types {
-	MESSAGE = 'PRINT_MESSAGE'
-}
+import changeText from './actions';
+import { Types, StateType } from './types';
 
-export type ExampleType = {
-	message: string;
-}
+export const InitialState: StateType = {
+	message: 'Click to change this message with redux',
+};
 
-export type InitialStateExampleType = {
-	message: string;	
-}
-
-export const InitialStateExample: InitialStateExampleType = {
-	message: 'MENSAGEM DO REDUCER'
-}
-
-export type ExampleAction = | { type: Types.MESSAGE, payload: {message: string} }
-
-export const ActionsE = {
-	[Types.MESSAGE]: (action:ExampleAction) => {
-		return {example: {message: action.payload.message}}
-	}
-}
+export const Actions = {
+	[Types.MESSAGE]: changeText,
+};

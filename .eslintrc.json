@@ -1,10 +1,13 @@
 {
     "env": {
         "browser": true,
-        "es6": true
+				"es6": true,
+				"jest": true
     },
     "extends": [
-        "plugin:react/recommended",
+				"eslint:recommended",
+				"plugin:react/recommended",
+				"plugin:@typescript-eslint/recommended",
         "airbnb"
     ],
     "globals": {
@@ -22,7 +25,9 @@
     "plugins": [
         "react",
 				"@typescript-eslint",
-				"prettier", "react-hooks", "eslint-plugin-import-helpers"
+				"prettier",
+				"react-hooks",
+				"eslint-plugin-import-helpers"
 		],
     "rules": {
 			"import/no-unresolved": "off",
@@ -35,8 +40,11 @@
 			"react/jsx-indent": [2, "tab"],
 			"react/jsx-indent-props": "off",
 			"jsx-quotes":"off",
-			"@typescript-eslint/no-explicit-any": 0,
+			"import/extensions": "off",
+			"max-len": "off",
+			"@typescript-eslint/no-explicit-any": "error",
 			"no-tabs": "off",
+			"comma-dangle":"off",
 			"import-helpers/order-imports": [
 				"warn",
 				{
