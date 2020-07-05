@@ -7,23 +7,27 @@
 
 <!-- PROJECT SHIELDS -->
 
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
-[![issues](https://img.shields.io/github/issues/HigorAlves/cra-template)](https://github.com/HigorAlves/cra-template/issues)
-[![license](https://img.shields.io/github/license/HigorAlves/cra-template)](https://github.com/HigorAlves/cra-template/)
-[![top-language](https://img.shields.io/github/languages/top/higoralves/cra-template)](https://github.com/HigorAlves/cra-template/)
-[![pr-open](https://img.shields.io/github/issues-pr/higoralves/cra-template)](https://github.com/HigorAlves/cra-template/)
-[![version](https://img.shields.io/github/package-json/v/higoralves/cra-template)](https://github.com/HigorAlves/cra-template/)
-[![release](https://img.shields.io/github/v/release/higoralves/cra-template?include_prereleases)](https://github.com/HigorAlves/cra-template/)
-[![latest-commit](https://img.shields.io/github/last-commit/higoralves/cra-template)](https://github.com/HigorAlves/cra-template/)
+<div align="center">
+
+ [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+ [![issues](https://img.shields.io/github/issues/HigorAlves/cra-template)](https://github.com/HigorAlves/cra-template/issues)
+ [![license](https://img.shields.io/github/license/HigorAlves/cra-template)](https://github.com/HigorAlves/cra-template/)
+ [![top-language](https://img.shields.io/github/languages/top/higoralves/cra-template)](https://github.com/HigorAlves/cra-template/)
+ [![pr-open](https://img.shields.io/github/issues-pr/higoralves/cra-template)](https://github.com/HigorAlves/cra-template/)
+ [![version](https://img.shields.io/github/package-json/v/higoralves/cra-template)](https://github.com/HigorAlves/cra-template/)
+ [![release](https://img.shields.io/github/v/release/higoralves/cra-template?include_prereleases)](https://github.com/HigorAlves/cra-template/)
+ [![latest-commit](https://img.shields.io/github/last-commit/higoralves/cra-template)](https://github.com/HigorAlves/cra-template/)
+
+</div>
 
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
   <a href="link">
-    <img src="logo" alt="Logo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png" width='30%' alt="ReactJS logo">
   </a>
 
-  <h3 align="center">CRA Template</h3>
+  <h1 align="center">CRA Template</h1>
 </p>
 
 <!-- TABLE OF CONTENTS -->
