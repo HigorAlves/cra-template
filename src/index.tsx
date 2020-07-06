@@ -2,6 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import 'assets/css/reset.css';
+
+import { ErrorBoundary } from 'hocs/errorBoundary';
+
+import ErrorBoundaryPage from 'pages/errorBoundary';
 import App from 'pages/home';
 
 import { StoreProvider } from 'store';
@@ -10,9 +14,11 @@ import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
 	<React.StrictMode>
-		<StoreProvider>
-			<App />
-		</StoreProvider>
+		<ErrorBoundary fallbackRender={ErrorBoundaryPage}>
+			<StoreProvider>
+				<App />
+			</StoreProvider>
+		</ErrorBoundary>
 	</React.StrictMode>,
 	document.getElementById('root')
 );

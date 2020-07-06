@@ -8,6 +8,10 @@ import { Types } from 'store/example/types';
 function App(): React.ReactElement {
 	const { state, dispatch } = useStore();
 
+	if (state.example.message === '👨🏻‍💻 All seems to work! ✅') {
+		throw new Error('I crashed!');
+	}
+
 	return (
 		<div className='App'>
 			<header className='App-header'>
