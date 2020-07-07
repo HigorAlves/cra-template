@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import 'assets/css/reset.css';
+import 'assets/css/index.css';
+import 'assets/css/errorBoundary.css';
+import 'assets/css/glitchEffect.css';
 
 import { ErrorBoundary } from 'hocs/errorBoundary';
 

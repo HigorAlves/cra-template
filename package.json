@@ -60,6 +60,7 @@
     "cz-emoji": "^1.2.1",
     "eslint": "^6.6.0",
     "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-import-helpers": "^1.0.2",
     "eslint-plugin-jsx-a11y": "^6.3.1",
