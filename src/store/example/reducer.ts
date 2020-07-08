@@ -1,7 +1,7 @@
 import { StateType, ActionType, Types } from './types';
 
 export const InitialState: StateType = {
-	message: '🧪 Click here to test global State! 🧪',
+	message: '👩‍🚀 Click to run an action',
 };
 
 export function exampleReducer(state = InitialState, action: ActionType): StateType {

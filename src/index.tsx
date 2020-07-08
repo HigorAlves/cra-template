@@ -5,6 +5,7 @@ import 'assets/css/reset.css';
 import 'assets/css/index.css';
 import 'assets/css/errorBoundary.css';
 import 'assets/css/glitchEffect.css';
+import 'assets/css/astronault.css';
 
 import { ErrorBoundary } from 'hocs/errorBoundary';
 
