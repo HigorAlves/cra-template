@@ -1,10 +1,9 @@
-// eslint-disable-next-line
 type ActionMap<M extends { [index: string]: any }> = {
 	[Key in keyof M]: M[Key] extends undefined ? { type: Key } : { type: Key; payload: M[Key] };
 };
 
 export enum Types {
-	MESSAGE = 'CHANGE_MESSAGE',
+	CHANGE_TEXT = 'CHANGE_TEXT',
 }
 
 export type StateType = {
@@ -12,7 +11,7 @@ export type StateType = {
 };
 
 type PayloadType = {
-	[Types.MESSAGE]: {
+	[Types.CHANGE_TEXT]: {
 		message: string;
 	};
 };

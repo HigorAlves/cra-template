@@ -1,5 +1,12 @@
-import { ActionType } from './types';
+import { Types, ActionType } from './types';
 
-const changeText = (action: ActionType): { example: { message: string } } => ({ example: { message: action.payload.message } });
+function changeText(message: string): ActionType {
+	return {
+		type: Types.CHANGE_TEXT,
+		payload: {
+			message,
+		},
+	};
+}
 
 export default changeText;

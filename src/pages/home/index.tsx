@@ -3,7 +3,7 @@ import React from 'react';
 import logo from 'assets/images/logo.svg';
 
 import { useStore } from 'store';
-import { Types } from 'store/example/types';
+import Actiont from 'store/example/actions';
 
 function App(): React.ReactElement {
 	const { state, dispatch } = useStore();
@@ -22,11 +22,7 @@ function App(): React.ReactElement {
 					<code> src/pages/home/index.tsx </code>
 					and save to reload.
 				</p>
-				<button
-					className='button'
-					type='button'
-					onClick={() => dispatch({ type: Types.MESSAGE, payload: { message: '👨🏻‍💻 All seems to work! ✅' } })}
-				>
+				<button className='button' type='button' onClick={() => dispatch(Actiont('👨🏻‍💻 All seems to work! ✅'))}>
 					{state.example.message}
 				</button>
 				<a href='https://github.com/higoralves/cra-template' target='blank'>

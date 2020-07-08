@@ -1,6 +1,6 @@
 import React, { createContext, useReducer, useContext } from 'react';
 
-import { INITIAL_STATE, reducer, ContextType, StateType, ActionsType } from './reducer';
+import { Reducer, initialState, ContextType } from './store';
 
 const StoreContext = createContext<ContextType>({} as ContextType);
 
@@ -9,7 +9,7 @@ type Props = {
 };
 
 export const StoreProvider: React.FC<Props> = ({ children }: Props): React.ReactElement => {
-	const [state, dispatch] = useReducer<React.Reducer<StateType, ActionsType>>(reducer, INITIAL_STATE);
+	const [state, dispatch] = useReducer(Reducer, initialState);
 
 	return <StoreContext.Provider value={{ state, dispatch }}>{children}</StoreContext.Provider>;
 };
