@@ -45,6 +45,7 @@
     ]
   },
   "devDependencies": {
+    "@higoralves/eslint-config": "^0.1.2",
     "@storybook/addon-actions": "^5.3.19",
     "@storybook/addon-info": "^5.3.19",
     "@storybook/addon-links": "^5.3.19",
