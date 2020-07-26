@@ -1,16 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import 'assets/css/reset.css';
-import 'assets/css/index.css';
-import 'assets/css/errorBoundary.css';
-import 'assets/css/glitchEffect.css';
-import 'assets/css/astronault.css';
+import 'Assets/css/reset.css';
+import 'Assets/css/index.css';
+import 'Assets/css/errorBoundary.css';
+import 'Assets/css/glitchEffect.css';
+import 'Assets/css/astronault.css';
 
-import { ErrorBoundary } from 'hocs/errorBoundary';
-
-import ErrorBoundaryPage from 'pages/errorBoundary';
-import App from 'pages/home';
+import { ErrorBoundary } from 'HOCs/errorBoundary';
+import ErrorBoundaryPage from 'Pages/errorBoundary';
+import App from 'Pages/home';
 
 import { StoreProvider } from 'store';
 
