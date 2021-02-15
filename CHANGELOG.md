@@ -2,6 +2,55 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 0.4.0 (2021-02-15)
+
+
+### :sparkles: Features
+
+* **lint:** Lint rules ([7ebd92e](https://github.com/HigorAlves/cra-template/commit/7ebd92e0d4c73f9b32f79e8326f802ca112c9ac8))
+* **reducer:** Reducer with global props ([82c47cc](https://github.com/HigorAlves/cra-template/commit/82c47cc07285103b747139c0f10eb14a345c4366))
+
+
+### :bug: Bug Fixes
+
+* **files:** removed old files ([1c16c7b](https://github.com/HigorAlves/cra-template/commit/1c16c7b80d2a818cd4c9683d2c3e97993552c6f6))
+
+
+### :art: Styling
+
+* **formatting:** refactor code style and make some improves ([1d20c57](https://github.com/HigorAlves/cra-template/commit/1d20c57cd52226e0b20edb6354656a20a9c35f8d))
+
+
+### :triangular_flag_on_post: Others
+
+* **new initial screen:** new initial screen with links and buttons ([319f3a3](https://github.com/HigorAlves/cra-template/commit/319f3a3d6b153ec1754dc1457866d4547471a5b5))
+
+
+### CI
+
+* **dependabot:** new dependabot configs ([2e10ece](https://github.com/HigorAlves/cra-template/commit/2e10ece2b4a0c706861b03510200a5fdb56aa5cf))
+
+
+### :memo: Docs
+
+* **readme:** new file with new doc ([ee38b49](https://github.com/HigorAlves/cra-template/commit/ee38b497ca87488151d76243ddb07e13c475d805))
+* **readme:** new readme ([48a9216](https://github.com/HigorAlves/cra-template/commit/48a9216822250a3973071858c8ce65b2a57fd61d))
+* **readme:** Update ([f0c0018](https://github.com/HigorAlves/cra-template/commit/f0c001841d1e296151db047b64b25c84da4fb9c2))
+* **storybook:** storybook added to doc all components and containers ([832cef9](https://github.com/HigorAlves/cra-template/commit/832cef93c8be01902313eef462514a6fc7c9f933))
+* **templates:** github issue templates ([a54a6e6](https://github.com/HigorAlves/cra-template/commit/a54a6e6a99c5680eee54d9783af228102e05558a))
+
+
+### :rocket: Build System
+
+* new version with sass ([9cc9573](https://github.com/HigorAlves/cra-template/commit/9cc9573dd6f34555fc67267ecdb92afd95bfd3a2))
+* **npm:** new scripts ([56baa09](https://github.com/HigorAlves/cra-template/commit/56baa098ce58da70295d681111f611d30fd08710))
+
+
+### :fire: Reverts
+
+* remove firebase configuration for deploy ([b9e2962](https://github.com/HigorAlves/cra-template/commit/b9e296250937b93f1d012f347d1b281c3fce89e4))
+* remove sass from the project ([4c6b6ba](https://github.com/HigorAlves/cra-template/commit/4c6b6ba548fca34a43b6fdae91ab35581f2bde09))
+
 ## 0.3.0 (2020-09-23)
 
 
