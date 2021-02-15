@@ -1,8 +1,4 @@
-<p style="text-align:center;">
-  <img src="https://i.imgur.com/VuU1sjM.png" height="100px" alt="nata house logo"/>
-</p>
-
-# Nata.House Create React Home Template
+# Create React Home Template
 
 ## Useful documentation
 
