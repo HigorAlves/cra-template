@@ -1,32 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
 
-import 'Assets/css/reset.css';
-import 'Assets/css/index.css';
-import 'Assets/css/errorBoundary.css';
-import 'Assets/css/glitchEffect.css';
-import 'Assets/css/astronault.css';
+import ReactDOM from 'react-dom'
+import 'assets/styles/globals.scss'
 
-import { ErrorBoundary } from 'HOCs/errorBoundary';
-import ErrorBoundaryPage from 'Pages/errorBoundary';
-import App from 'Pages/home';
-
-import { StoreProvider } from 'store';
-
-import * as serviceWorker from './serviceWorker';
+import Router from './router'
+import * as serviceWorker from './serviceWorker'
+import { StoreProvider } from './store'
+import StateInspectorComponent from './store/StateInspector'
+import './i18n'
 
 ReactDOM.render(
-	<React.StrictMode>
-		<ErrorBoundary fallbackRender={ErrorBoundaryPage}>
-			<StoreProvider>
-				<App />
-			</StoreProvider>
-		</ErrorBoundary>
-	</React.StrictMode>,
-	document.getElementById('root')
-);
+  <React.StrictMode>
+    <StateInspectorComponent>
+      <StoreProvider>
+        <Router />
+      </StoreProvider>
+    </StateInspectorComponent>
+  </React.StrictMode>,
+  document.getElementById('root')
+)
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+serviceWorker.unregister()

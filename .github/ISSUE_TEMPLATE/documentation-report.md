@@ -4,7 +4,6 @@ about: Use this template for documentation related issues
 title: "[DOC]"
 labels: documentation
 assignees: ''
-
 ---
 
 <!-- Verify first that your issue is not already reported -->

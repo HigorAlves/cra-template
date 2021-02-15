@@ -1,36 +1,47 @@
 {
   "name": "cra-template",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "@types/jest": "^24.0.0",
-    "@types/node": "^12.0.0",
-    "@types/react": "^16.9.0",
-    "@types/react-dom": "^16.9.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.1",
-    "typescript": "~3.7.2"
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint --fix --ext ts,tsx src",
+    "dev": "npm-run-all --parallel start dev:tsm",
+    "dev:tsm": "tsm src --exportType default --nameFormat none --quoteType single --watch",
+    "test": "react-scripts test -o --silent --watchAll=false",
+    "test:watch": "react-scripts test -o --watch",
+    "test:coverage": "react-scripts test -u --ci --silent --coverage",
+    "test:ci": "CI=true react-scripts test -u --silent --verbose --passWithNoTests",
+    "predeploy": "yarn build && yarn build-storybook",
+    "deploy:prod": "firebase deploy --only hosting:prod",
+    "deploy:dev": "firebase deploy --only hosting:staging",
+    "prettier": "npx prettier --write src/**/*.{ts,tsx,json}",
+    "lint": "tsc --noEmit && eslint --fix --ext ts,tsx .",
     "release": "standard-version",
-    "release:major": "standard-version -- --release-as major",
-    "release:minor": "standard-version -- --release-as minor",
-    "release:patch": "standard-version -- --release-as patch",
-    "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public"
+    "release:major": "yarn run release --release-as major --no-verify",
+    "release:minor": "yarn run release --release-as minor --no-verify",
+    "release:patch": "yarn run release --release-as patch --no-verify",
+    "release:alpha": "yarn run release --prerelease alpha --no-verify",
+    "release:beta": "yarn run release --prerelease beta --no-verify",
+    "storybook": "start-storybook -p 6006 -s public",
+    "sitemap": "yarn babel-node src/services/sitemap-generation.js",
+    "build:storybook": "build-storybook -o build/storybook",
+    "lighthouse": "lighthouse http://localhost:5000 --chrome-flags='--no-sandbox --headless --disable-gpu' --output html --output-path ./lighthouse-report.html --view"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-push": "yarn test"
+    }
+  },
+  "lint-staged": {
+    "*.{tsx,ts,json}": [
+      "pretty-quick --staged"
+    ],
+    "*.{tsx,ts}": [
+      "yarn run lint"
+    ]
   },
   "browserslist": {
     "production": [
@@ -44,52 +55,65 @@
       "last 1 safari version"
     ]
   },
+  "dependencies": {
+    "axios": "^0.21.0",
+    "i18next": "^19.8.4",
+    "i18next-browser-languagedetector": "^6.0.1",
+    "node-sass": "^4.8.3",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0",
+    "react-i18next": "^11.8.3",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.1",
+    "reinspect": "^1.1.0",
+    "typescript": "~4.0.5"
+  },
   "devDependencies": {
-    "@higoralves/eslint-config": "^0.1.2",
-    "@storybook/addon-actions": "^5.3.19",
-    "@storybook/addon-info": "^5.3.19",
-    "@storybook/addon-links": "^5.3.19",
-    "@storybook/addons": "^5.3.19",
-    "@storybook/preset-create-react-app": "^3.1.3",
-    "@storybook/react": "^5.3.19",
-    "@storybook/theming": "^5.3.19",
-    "@typescript-eslint/eslint-plugin": "^3.5.0",
-    "@typescript-eslint/parser": "^3.5.0",
-    "babel-loader": "^8.1.0",
-    "commitizen": "^4.1.2",
-    "cz-conventional-changelog": "^3.2.0",
-    "cz-emoji": "^1.2.1",
-    "eslint": "^6.6.0",
-    "eslint-config-airbnb": "^18.2.0",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-import": "^2.22.0",
-    "eslint-plugin-import-helpers": "^1.0.2",
-    "eslint-plugin-jsx-a11y": "^6.3.1",
-    "eslint-plugin-prettier": "^3.1.4",
-    "eslint-plugin-react": "^7.20.0",
-    "eslint-plugin-react-hooks": "^4.0.5",
-    "husky": "^4.2.5",
-    "lint-staged": "^10.2.11",
-    "prettier": "^2.0.5",
-    "standard-version": "^8.0.0"
-  },
-  "config": {
-    "commitizen": {
-      "path": "cz-emoji"
-    }
-  },
-  "lint-staged": {
-    "src/*.tsx": [
-      "eslint --fix"
-    ],
-    "src/*.ts": [
-      "eslint --fix"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
-    }
+    "@babel/core": "^7.12.10",
+    "@babel/node": "^7.12.10",
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@storybook/addon-actions": "^6.1.11",
+    "@storybook/addon-essentials": "^6.1.11",
+    "@storybook/addon-links": "^6.1.11",
+    "@storybook/node-logger": "^6.1.11",
+    "@storybook/preset-create-react-app": "^3.1.5",
+    "@storybook/react": "^6.1.11",
+    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/react": "^11.2.2",
+    "@testing-library/user-event": "^12.5.0",
+    "@types/jest": "^26.0.19",
+    "@types/node": "^14.14.13",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@types/react-helmet": "^6.1.0",
+    "@types/react-router-dom": "^5.1.6",
+    "@typescript-eslint/eslint-plugin": "^4.9.1",
+    "@typescript-eslint/parser": "^4.9.1",
+    "babel-loader": "8.1.0",
+    "eslint": "^7.15.0",
+    "eslint-config-prettier": "^7.0.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.2.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-standard": "^5.0.0",
+    "husky": "^4.3.5",
+    "jest": "26.6.0",
+    "jest-transform-stub": "^2.0.0",
+    "lighthouse": "^6.5.0",
+    "lint-staged": "^10.5.3",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.2.1",
+    "pretty-quick": "^3.1.0",
+    "react-is": "^17.0.1",
+    "react-test-renderer": "^17.0.1",
+    "serve": "^11.3.2",
+    "standard-version": "^9.0.0",
+    "ts-jest": "^26.4.4",
+    "typed-scss-modules": "^3.4.0"
   }
 }
