@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0](https://github.com/HigorAlves/cra-template/compare/v0.4.0...v1.0.0) (2021-02-16)
+
+
+### :recycle: Code Refactoring
+
+* new global store ([00fddc2](https://github.com/HigorAlves/cra-template/commit/00fddc2d879873099bf01fb5be775cd498372506))
+* new global store ([2019494](https://github.com/HigorAlves/cra-template/commit/2019494d6810e2a319740bad2e5131a3f76cee37))
+
+
+### :bug: Bug Fixes
+
+* merge ([e692a85](https://github.com/HigorAlves/cra-template/commit/e692a85c969c9d5cd3b3ac05021c6c875790e570))
+
+
+### :fire: Reverts
+
+* new prettier config ([9aed402](https://github.com/HigorAlves/cra-template/commit/9aed402aae610a346aa2703cab4d9f3a616fcf24))
+
 ## 0.4.0 (2021-02-15)
 
 
