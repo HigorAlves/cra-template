@@ -1,4 +1,5 @@
-import { applyMiddleware, createStore, Store } from 'redux'
+import * as Sentry from '@sentry/react'
+import { applyMiddleware, createStore, Store, compose } from 'redux'
 import createSagaMiddleware from 'redux-saga'
 
 import { IGithubState } from './github/types'
@@ -11,9 +12,11 @@ export interface AppState {
 
 const sagaMiddleware = createSagaMiddleware()
 
+const sentryReduxEnhancer = Sentry.createReduxEnhancer()
+
 export const store: Store<AppState> = createStore(
   rootReducer,
-  applyMiddleware(sagaMiddleware)
+  compose(applyMiddleware(sagaMiddleware), sentryReduxEnhancer)
 )
 
 sagaMiddleware.run(rootSaga)
