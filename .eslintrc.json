@@ -43,6 +43,8 @@
     "no-use-before-define": "off",
     "default-param-last": "off",
     "multiline-ternary": "off",
+    "generator-star-spacing": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
     "import/order": [
       "error",
       {

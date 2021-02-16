@@ -1,20 +1,19 @@
 import React from 'react'
 
 import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
 
-import Router from './router'
+import Router from 'router'
+import { store } from 'store'
+
 import * as serviceWorker from './serviceWorker'
-import { StoreProvider } from './store'
-import StateInspectorComponent from './store/StateInspector'
 import './i18n'
 
 ReactDOM.render(
   <React.StrictMode>
-    <StateInspectorComponent>
-      <StoreProvider>
-        <Router />
-      </StoreProvider>
-    </StateInspectorComponent>
+    <Provider store={store}>
+      <Router />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 )
