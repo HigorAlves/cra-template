@@ -22,7 +22,6 @@ Sentry.init({
 
 ReactDOM.render(
   <React.StrictMode>
-    {console.log(process.env, 'aqui')}
     <Sentry.ErrorBoundary fallback={'An error has occurred'}>
       <Provider store={store}>
         <Router />
