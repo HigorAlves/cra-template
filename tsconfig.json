@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es6",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -16,7 +16,7 @@
     "jsx": "react-jsx",
     "baseUrl": "./src",
     "noFallthroughCasesInSwitch": true,
-    "typeRoots": ["node_modules/@types", "typings"]
+    "typeRoots": ["node_modules/@types", "types"]
   },
-  "include": ["src", "typings"]
+  "include": ["src", "types"]
 }

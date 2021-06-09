@@ -28,7 +28,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# style typings
+# style types
 *.scss.d.ts
 *.module.scss.d.ts
 
